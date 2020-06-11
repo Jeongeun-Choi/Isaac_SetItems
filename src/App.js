@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route } from "react-router-dom";
+import { Home, SetItems, ItemExplanation } from "./pages";
+import Menu from "./components/Menu";
+import HeaderImg from "./components/HeaderImg";
+import styled from "styled-components";
+import "antd/dist/antd.css";
+import RelationItem from "./pages/RelationItem";
 
-function App() {
+const Header = styled.div`
+  text-align: center;
+`;
+
+const Content = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header>
+        <HeaderImg />
+      </Header>
+      <Menu />
+      <Content>
+        <Route exact path="/" component={Home} />
+        {/* <Route path="/characters" component={Characters}/> */}
+        <Route exact path="/setitems" component={SetItems} />
+        <Route exact path="/setitems/:setname" component={ItemExplanation} />
+        <Route path="/setitems/:setname/:name" component={RelationItem} />
+      </Content>
+    </>
   );
-}
+};
 
 export default App;
