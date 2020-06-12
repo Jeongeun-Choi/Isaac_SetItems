@@ -25,7 +25,6 @@ const App = () => {
       <Menu />
       <Content>
         <Route exact path="/" component={Home} />
-        {/* <Route path="/characters" component={Characters}/> */}
         <Route exact path="/setitems" component={SetItems} />
         <Route exact path="/setitems/:setname" component={ItemExplanation} />
         <Route path="/setitems/:setname/:name" component={RelationItem} />
