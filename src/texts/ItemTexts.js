@@ -33,7 +33,6 @@ export const SetItemTexts = {
       name: "Guppy's Tail",
       information:
         "방 클리어 시 나오는 픽업류 아이템을 1/3 확률로 상자류로 바꾸어 준다." +
-        `${(<br />)}` +
         "단 상자로 바뀌지 않았을 경우 1/3 확률로 방 클리어 보상이 등장하지 않는다."
     }
   ],
@@ -55,7 +54,6 @@ export const SetItemTexts = {
       name: "Best Bud",
       information:
         "캐릭터가 피격되면 해당방 한정으로 하얀 파리가 등장하여 빠르게 궤도를 돈다." +
-        `${(<br />)}` +
         "이 파리는 틱당 5, 초당 75의 데미지를 준다."
     },
     {
@@ -63,7 +61,6 @@ export const SetItemTexts = {
       name: "Big Fan",
       information:
         "캐릭터 주변을 천천히 도는 거대 파리가 생긴다." +
-        `${(<br />)}` +
         "적의 눈물 공격을 막을 수 있으며 접촉 시 틱당 2, 초당 30의 데미지를 준다."
     },
     {
@@ -83,7 +80,6 @@ export const SetItemTexts = {
       name: "Halo of Flies",
       information:
         "파리 두 마리가 아이작을 맴돌며 적들의 발사체를 막아준다." +
-        `${(<br />)}` +
         "fly류 에게만 접촉 피해가 있다."
     },
     {
