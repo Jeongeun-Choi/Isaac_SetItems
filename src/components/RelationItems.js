@@ -6,8 +6,9 @@ const RelationItemForm = styled.div`
   display: flex;
   align-items: center;
   border: 1px solid gray;
-  width: 200px;
+  width: 250px;
   height: 70px;
+  margin-bottom: 20%;
 `;
 
 const RelationItem = ({ data, setName }) => {
