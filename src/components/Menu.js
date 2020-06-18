@@ -23,6 +23,9 @@ const Menu = () => {
       <LinkDiv>
         <Link to="/setitems">SetItems</Link>
       </LinkDiv>
+      <LinkDiv>
+        <Link to="/items">Items</Link>
+      </LinkDiv>
     </MenuForm>
   );
 };

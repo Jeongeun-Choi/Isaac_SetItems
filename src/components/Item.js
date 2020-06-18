@@ -1,27 +1,28 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Card } from "antd";
 import styled from "styled-components";
+import { SetItemsName } from "../texts/SetItemsName";
+import { Link } from "react-router-dom";
 
 const ItemForm = styled.div`
-  margin-top: 20px;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  border: 1px solid gray;
+  width: 250px;
+  height: 70px;
+  margin-bottom: 20%;
 `;
 
-const Item = ({ name }) => {
+const Item = ({ data }) => {
+  const name = data.name.split(" ").join("");
+  const setName = SetItemsName[String(data.id).slice(0, 2)];
+
   return (
+    //   <Link to={`/setitems/${setName}/${data.name}`}>
     <ItemForm>
-      <Link to={`/setitems/${name}`}>
-        <Card
-          hoverable
-          bordered={false}
-          style={{ width: 200 }}
-          cover={<img alt={`${name}`} src={`/img/${name}/${name}.png`} />}
-        >
-          <Card.Meta title={name.toUpperCase()} />
-        </Card>
-      </Link>
+      <img alt={data.name} src={`/img/${setName}/${name.toLowerCase()}.png`} />
+      <h3>{data.name}</h3>
     </ItemForm>
+    //   </Link>
   );
 };
 

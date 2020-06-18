@@ -1,11 +1,16 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { Home, SetItems, ItemExplanation } from "./pages";
+import {
+  Home,
+  SetItems,
+  SetItemExplanation,
+  ItemExplanation,
+  Items
+} from "./pages";
 import Menu from "./components/Menu";
 import HeaderImg from "./components/HeaderImg";
 import styled from "styled-components";
 import "antd/dist/antd.css";
-import RelationItem from "./pages/RelationItem";
 
 const Header = styled.div`
   text-align: center;
@@ -25,9 +30,11 @@ const App = () => {
       <Menu />
       <Content>
         <Route exact path="/" component={Home} />
+        <Route exact path="/items" component={Items} />
+        {/* <Route path="/items/:name" component={ItemExplanation} /> */}
         <Route exact path="/setitems" component={SetItems} />
-        <Route exact path="/setitems/:setname" component={ItemExplanation} />
-        <Route path="/setitems/:setname/:name" component={RelationItem} />
+        <Route exact path="/setitems/:setname" component={SetItemExplanation} />
+        <Route path="/setitems/:setname/:name" component={ItemExplanation} />
       </Content>
     </>
   );

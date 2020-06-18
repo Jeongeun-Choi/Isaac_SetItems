@@ -1,7 +1,6 @@
 import React from "react";
-import Item from "../components/Item";
+import SetItem from "../components/SetItem";
 import { Row, Col } from "antd";
-import styled from "styled-components";
 
 const SetItems = () => {
   const sets = [
@@ -27,7 +26,7 @@ const SetItems = () => {
       {sets.map(set => (
         <>
           <Col xs={24} md={{ span: 9, offset: 3 }} lg={{ span: 5, offset: 3 }}>
-            <Item key={set} name={set} />
+            <SetItem key={set} name={set} />
           </Col>
         </>
       ))}
