@@ -5,7 +5,8 @@ import {
   SetItems,
   SetItemExplanation,
   ItemExplanation,
-  Items
+  Items,
+  SearchItems
 } from "./pages";
 import Menu from "./components/Menu";
 import HeaderImg from "./components/HeaderImg";
@@ -30,7 +31,8 @@ const App = () => {
       <Menu />
       <Content>
         <Route exact path="/" component={Home} />
-        <Route exact path="/items" component={Items} />
+        <Route path="/search" component={SearchItems} />
+        {/* <Route exact path="/items" component={Items} /> */}
         {/* <Route path="/items/:name" component={ItemExplanation} /> */}
         <Route exact path="/setitems" component={SetItems} />
         <Route exact path="/setitems/:setname" component={SetItemExplanation} />

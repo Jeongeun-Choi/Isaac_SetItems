@@ -1,6 +1,7 @@
 //세트 아이템 설명
 import React from "react";
 import { SetItemTexts, SetItemExplanationTexts } from "../texts/ItemTexts";
+import { ItemTexts } from "../texts/Text";
 import styled from "styled-components";
 import RelationItems from "../components/RelationItems";
 import { Row, Col } from "antd";
@@ -19,9 +20,11 @@ const ExplanationForm = styled.div`
 
 const SetItemExplanation = ({ match }) => {
   const name = match.params.setname;
-  const information = SetItemExplanationTexts[name].split(". ");
 
-  console.log(information);
+  const index = ItemTexts.findIndex(setItem => setItem.setitem.includes(name));
+  const setInformation = ItemTexts[index].information.split(". ");
+  const setItems = ItemTexts.filter(item => item.setitem.includes(name));
+
   return (
     <ExplanationForm>
       <div>
@@ -33,13 +36,13 @@ const SetItemExplanation = ({ match }) => {
         />
       </div>
       <div className="textForm">
-        {information.map(info => (
+        {setInformation.map(info => (
           <div>{info}.</div>
         ))}
       </div>
       <h1>관련 아이템</h1>
       <Row>
-        {SetItemTexts[name].map(item => (
+        {setItems.map(item => (
           <Col xs={24} md={{ span: 9, offset: 3 }} lg={{ span: 5, offset: 3 }}>
             <RelationItems data={item} key={item.id} setName={name} />
           </Col>

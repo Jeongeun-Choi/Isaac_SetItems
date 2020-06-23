@@ -24,7 +24,7 @@ const Menu = () => {
         <Link to="/setitems">SetItems</Link>
       </LinkDiv>
       <LinkDiv>
-        <Link to="/items">Items</Link>
+        <Link to="/search">SearchItems</Link>
       </LinkDiv>
     </MenuForm>
   );
