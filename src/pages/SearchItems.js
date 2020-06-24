@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { SearchResult } from ".";
 
 const SearchInputForm = styled.div`
   margin-top: 50px;
@@ -26,7 +27,7 @@ const SearchItems = () => {
         placeholder="검색할 내용을 입력하세요!"
         onChange={onChangeInput}
       />
-      <Link to="/search/:searchitem">
+      <Link to={`/search/${searchItem}`}>
         <button onClick={search}>검색</button>
       </Link>
     </SearchInputForm>

@@ -11,7 +11,8 @@ const RelationItemForm = styled.div`
   margin-bottom: 20%;
 `;
 
-const RelationItem = ({ data, setName }) => {
+const RelationItems = ({ data, setName }) => {
+  console.log(data);
   const name = data.name.split(" ").join("");
   return (
     <Link to={`/setitems/${setName}/${data.name}`}>
@@ -26,4 +27,4 @@ const RelationItem = ({ data, setName }) => {
   );
 };
 
-export default RelationItem;
+export default RelationItems;
