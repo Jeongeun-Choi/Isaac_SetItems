@@ -1,6 +1,5 @@
 //세트 아이템 설명
 import React from "react";
-import { SetItemTexts, SetItemExplanationTexts } from "../texts/ItemTexts";
 import { ItemTexts } from "../texts/Text";
 import styled from "styled-components";
 import RelationItems from "../components/RelationItems";
