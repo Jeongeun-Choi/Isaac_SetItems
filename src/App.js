@@ -1,3 +1,8 @@
+/**
+ *  / : home
+ *  /search : 검색화면
+ *  /setitems : 세트 아이템 모음
+ */
 import React from "react";
 import { Route } from "react-router-dom";
 import {
@@ -5,7 +10,6 @@ import {
   SetItems,
   SetItemExplanation,
   ItemExplanation,
-  Items,
   SearchItems,
   SearchResult
 } from "./pages";
@@ -34,8 +38,6 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route path="/search" component={SearchItems} />
         <Route path="/search/:searchitem" component={SearchResult} />
-        {/* <Route exact path="/items" component={Items} /> */}
-        {/* <Route path="/items/:name" component={ItemExplanation} /> */}
         <Route exact path="/setitems" component={SetItems} />
         <Route exact path="/setitems/:setname" component={SetItemExplanation} />
         <Route path="/setitems/:setname/:name" component={ItemExplanation} />

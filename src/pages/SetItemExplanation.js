@@ -2,7 +2,7 @@
 import React from "react";
 import { ItemTexts } from "../texts/Text";
 import styled from "styled-components";
-import RelationItems from "../components/RelationItems";
+import Item from "../components/Item";
 import { Row, Col } from "antd";
 
 const ExplanationForm = styled.div`
@@ -43,7 +43,7 @@ const SetItemExplanation = ({ match }) => {
       <Row>
         {setItems.map(item => (
           <Col xs={24} md={{ span: 9, offset: 3 }} lg={{ span: 5, offset: 3 }}>
-            <RelationItems data={item} key={item.id} setName={name} />
+            <Item data={item} key={item.id} setName={name} />
           </Col>
         ))}
       </Row>

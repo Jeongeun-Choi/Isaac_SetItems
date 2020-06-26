@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { SearchResult } from ".";
+import { message } from "antd";
 
 const SearchInputForm = styled.div`
   margin-top: 50px;
@@ -16,7 +16,13 @@ const SearchItems = () => {
   const onChangeInput = e => {
     setSearchItem(e.target.value);
   };
-  const search = () => {
+
+  const search = e => {
+    //공백 입력시 페이지 넘어가지 않도록.
+    if (!searchItem.trim()) {
+      e.preventDefault();
+      message.error("공백 X");
+    }
     setSearchItem("");
   };
 
@@ -27,8 +33,8 @@ const SearchItems = () => {
         placeholder="검색할 내용을 입력하세요!"
         onChange={onChangeInput}
       />
-      <Link to={`/search/${searchItem}`}>
-        <button onClick={search}>검색</button>
+      <Link to={`/search/${searchItem}`} onClick={search}>
+        <button>검색</button>
       </Link>
     </SearchInputForm>
   );

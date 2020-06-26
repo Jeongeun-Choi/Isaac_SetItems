@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const HeaderImg = () => {
-    return (
-        <div>
-            로고 이미지 넣으세연 ㅎㅎ
-        </div>
-    );
+  return (
+    <div>
+      <img src={`/img/logo.png`} />
+    </div>
+  );
 };
 
 export default HeaderImg;

@@ -1,9 +1,9 @@
+// 아이템 출력
 import React from "react";
 import styled from "styled-components";
-import { SetItemsName } from "../texts/SetItemsName";
 import { Link } from "react-router-dom";
 
-const ItemForm = styled.div`
+const RelationItemForm = styled.div`
   display: flex;
   align-items: center;
   border: 1px solid gray;
@@ -12,18 +12,23 @@ const ItemForm = styled.div`
   margin-bottom: 20%;
 `;
 
-const Item = ({ data }) => {
+const RelationItems = ({ data, setName }) => {
   const name = data.name.split(" ").join("");
-  const setName = SetItemsName[String(data.id).slice(0, 2)];
+
+  //두 개 이상의 세트에 적용될 경우
+  const setItemName = typeof setName === "object" ? setName[0] : setName;
 
   return (
-    //   <Link to={`/setitems/${setName}/${data.name}`}>
-    <ItemForm>
-      <img alt={data.name} src={`/img/${setName}/${name.toLowerCase()}.png`} />
-      <h3>{data.name}</h3>
-    </ItemForm>
-    //   </Link>
+    <Link to={`/setitems/${setItemName}/${data.name}`}>
+      <RelationItemForm>
+        <img
+          alt={data.name}
+          src={`/img/${setItemName}/${name.toLowerCase()}.png`}
+        />
+        <h3>{data.name}</h3>
+      </RelationItemForm>
+    </Link>
   );
 };
 
-export default Item;
+export default RelationItems;
