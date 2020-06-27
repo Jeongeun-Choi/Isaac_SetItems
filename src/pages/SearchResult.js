@@ -18,7 +18,7 @@ const SearchResult = ({ match }) => {
   return (
     <ResultForm>
       {searchItems.length === 0 ? (
-        <SearchResultError />
+        <SearchResultError searchItem={match.params.searchitem} />
       ) : (
         <Row>
           {searchItems.map(item => (

@@ -6,14 +6,37 @@ import Item from "../components/Item";
 import { Row, Col } from "antd";
 
 const ExplanationForm = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 60px;
 
-  .textForm {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+  .setitemInfoForm {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .setitemInfoTop {
+      font-size: 35px;
+      font-weight: bold;
+    }
+
+    .setitemInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      font-size: 20px;
+      margin-left: 30px;
+    }
+  }
+
+  h1 {
+    font-weight: bold;
+    margin-top: 40px;
   }
 `;
 
@@ -34,10 +57,13 @@ const SetItemExplanation = ({ match }) => {
           height={170}
         />
       </div>
-      <div className="textForm">
-        {setInformation.map(info => (
-          <div>{info}.</div>
-        ))}
+      <div className="setitemInfoForm">
+        <div className="setitemInfoTop">세트 효과</div>
+        <div className="setitemInfo">
+          {setInformation.map(info => (
+            <div>{info}.</div>
+          ))}
+        </div>
       </div>
       <h1>관련 아이템</h1>
       <Row>

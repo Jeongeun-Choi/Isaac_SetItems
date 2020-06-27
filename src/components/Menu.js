@@ -6,12 +6,19 @@ const MenuForm = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  /* align-content: space-between; */
+  flex-wrap: wrap;
+  margin-top: 20px;
 `;
 
 const LinkDiv = styled.div`
-  width: 50%;
+  width: 33.3%;
   text-align: center;
+
+  a {
+    color: #be3030;
+    font-size: 25px;
+    font-weight: bold;
+  }
 `;
 
 const Menu = () => {
