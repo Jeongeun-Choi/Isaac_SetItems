@@ -25,7 +25,7 @@ const SetItems = () => {
     <Row>
       {sets.map(set => (
         <>
-          <Col xs={24} md={{ span: 9, offset: 3 }} lg={{ span: 5, offset: 3 }}>
+          <Col xs={24} md={12} lg={8}>
             <SetItem key={set} name={set} />
           </Col>
         </>

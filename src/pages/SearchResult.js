@@ -7,6 +7,11 @@ import SearchResultError from "../components/SearchResultError";
 
 const ResultForm = styled.div`
   margin-top: 40px;
+
+  .itemForm {
+    display: flex;
+    justify-content: center;
+  }
 `;
 const SearchResult = ({ match }) => {
   const searchitem = match.params.searchitem.toLowerCase();
@@ -22,12 +27,10 @@ const SearchResult = ({ match }) => {
       ) : (
         <Row>
           {searchItems.map(item => (
-            <Col
-              xs={24}
-              md={{ span: 9, offset: 3 }}
-              lg={{ span: 5, offset: 3 }}
-            >
-              <Item data={item} setName={item.setitem} />
+            <Col xs={24} md={12} lg={8}>
+              <div className="itemForm">
+                <Item data={item} setName={item.setitem} />
+              </div>
             </Col>
           ))}
         </Row>

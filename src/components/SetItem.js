@@ -6,6 +6,9 @@ import styled from "styled-components";
 const ItemForm = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 `;
 
 const SetItem = ({ name }) => {
@@ -15,7 +18,7 @@ const SetItem = ({ name }) => {
         <Card
           hoverable
           bordered={false}
-          style={{ width: 200 }}
+          style={{ width: 200, height: 310 }}
           cover={<img alt={`${name}`} src={`/img/${name}/${name}.png`} />}
         >
           <Card.Meta title={name.toUpperCase()} />

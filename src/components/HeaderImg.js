@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const HeaderImg = () => {
   return (
-    <div>
+    <Link to="/">
       <img src={`/img/logo.png`} width="100%" />
-    </div>
+    </Link>
   );
 };
 

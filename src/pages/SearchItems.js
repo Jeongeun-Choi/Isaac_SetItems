@@ -8,6 +8,15 @@ const SearchInputForm = styled.div`
   input {
     width: 400px;
   }
+
+  a {
+    color: #be3030;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 const SearchItems = () => {
@@ -28,14 +37,16 @@ const SearchItems = () => {
 
   return (
     <SearchInputForm>
-      <input
-        value={searchItem}
-        placeholder="검색할 내용을 입력하세요!"
-        onChange={onChangeInput}
-      />
-      <Link to={`/search/${searchItem}`} onClick={search}>
-        <button>검색</button>
-      </Link>
+      <div>
+        <input
+          value={searchItem}
+          placeholder="검색할 내용을 입력하세요!"
+          onChange={onChangeInput}
+        />
+        <Link to={`/search/${searchItem}`} onClick={search}>
+          <button>검색</button>
+        </Link>
+      </div>
     </SearchInputForm>
   );
 };

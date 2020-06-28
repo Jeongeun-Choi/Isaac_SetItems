@@ -1,12 +1,13 @@
 import React from "react";
 import { Result, Typography } from "antd";
-import { CloseCircleOutlined } from "@ant-design/icons";
+import { BulbOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const ErrorForm = styled.div`
   display: flex;
   justify-content: center;
+  text-align: center;
   .ant-result-error {
     width: 700px;
   }
@@ -33,7 +34,7 @@ const SearchResultError = ({ searchItem }) => {
             </Text>
           </Paragraph>
           <Paragraph>
-            <CloseCircleOutlined className="site-result-demo-error-icon" />
+            <BulbOutlined className="site-result-demo-error-icon" />
             세트 아이템이 잘 정리되어 있는{" "}
             <Link to={`/setitems`}>
               <a>세트 아이템 보러가기 &gt;</a>

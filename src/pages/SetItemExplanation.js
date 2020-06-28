@@ -11,6 +11,7 @@ const ExplanationForm = styled.div`
   flex-direction: column;
   justify-content: center;
   margin-top: 60px;
+  text-align: center;
 
   .setitemInfoForm {
     margin-top: 40px;
@@ -37,6 +38,11 @@ const ExplanationForm = styled.div`
   h1 {
     font-weight: bold;
     margin-top: 40px;
+  }
+
+  .itemForm {
+    display: flex;
+    justify-content: center;
   }
 `;
 
@@ -68,8 +74,10 @@ const SetItemExplanation = ({ match }) => {
       <h1>관련 아이템</h1>
       <Row>
         {setItems.map(item => (
-          <Col xs={24} md={{ span: 9, offset: 3 }} lg={{ span: 5, offset: 3 }}>
-            <Item data={item} key={item.id} setName={name} />
+          <Col xs={24} md={12} lg={8}>
+            <div className="itemForm">
+              <Item data={item} key={item.id} setName={name} />
+            </div>
           </Col>
         ))}
       </Row>
