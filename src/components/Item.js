@@ -20,7 +20,11 @@ const ItemForm = styled.div`
 `;
 
 const Item = ({ data, setName }) => {
-  const name = data.name.split(" ").join("");
+  let name = data.name.split(" ").join("");
+
+  if (name.includes("???")) {
+    name = "question" + name.slice(3);
+  }
 
   //두 개 이상의 세트에 적용될 경우
   const setItemName = typeof setName === "object" ? setName[0] : setName;

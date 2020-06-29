@@ -66,17 +66,17 @@ const SetItemExplanation = ({ match }) => {
       <div className="setitemInfoForm">
         <div className="setitemInfoTop">세트 효과</div>
         <div className="setitemInfo">
-          {setInformation.map(info => (
-            <div>{info}.</div>
+          {setInformation.map((info, i) => (
+            <div key={i}>{info}.</div>
           ))}
         </div>
       </div>
       <h1>관련 아이템</h1>
       <Row>
         {setItems.map(item => (
-          <Col xs={24} md={12} lg={8}>
+          <Col xs={24} md={12} lg={8} key={item.id}>
             <div className="itemForm">
-              <Item data={item} key={item.id} setName={name} />
+              <Item data={item} setName={name} />
             </div>
           </Col>
         ))}

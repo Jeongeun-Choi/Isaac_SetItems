@@ -61,6 +61,7 @@ const ItemExplanation = ({ match }) => {
     .split(" ")
     .join("")
     .toLowerCase(); //사진 불러오기 위한 아이템 이름
+
   const information = ItemTexts[index].information.split(". "); //아이템 설명
   const setItemName = ItemTexts[index].setitem;
 
@@ -101,13 +102,13 @@ const ItemExplanation = ({ match }) => {
               <SetItem name={setName} />
             </Col>
           ) : (
-            setItemName.map(setName => (
+            setItemName.map((setName, i) => (
               <Col
                 xs={24}
                 md={{ span: 9, offset: 3 }}
                 lg={{ span: 5, offset: 3 }}
               >
-                <SetItem name={setName} />
+                <SetItem name={setName} key={i} />
               </Col>
             ))
           )}
