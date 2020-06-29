@@ -1,1 +1,3 @@
-내가 쓰려고 만드는거
+### 자세한 설명
+
+[Isaac-SetItems](https://www.notion.so/Isaac-setitems-e93b8063baf347599ec3af5da11f677a)
